@@ -1,28 +1,34 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Emo Gif Generator</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
   </head>
   <body>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <div class="jumbotron jumbotron-fluid">
+                    <div class="jumbotron jumbotron-fluid text-center pt-0 pb-3 mt-2">
                             <div class="container">
                                 <h1 class="display-3">Emo Kids Always</h1>
                                 <p class="lead">Generate GIFs from the bands you know and love.</p>
-                                <hr class="my-2">
-                                <p>Click a button to generate GIFs and then, add your own!</p>
+                                <label for="gifButton">Click a button to generate GIFs and then, add your own!</label>
+                                <input id="gifButton" type="text" class="form-control col-12 col-md-4 mx-auto">
+                                <br>
+                                <button class='btn' type="submit">Submit</button>
                             </div>
                     </div>        
                 </div>  
             </div>    
+            <div class="row">
+                <div class="col-12" id="buttonDiv"></div>
+            </div>
         </div>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
