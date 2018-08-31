@@ -13,8 +13,8 @@ buttonArray.forEach(element => {
 };
 
 
-$("body").on("click", ".bandButton", function(evt){
-    var band = $(evt).text();
+$("body").on("click", ".bandButton", function(){
+    var band = $(this).text();
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q="+ band +"&api_key=DqteY7DkZT5G9EtFgZoS3gOp5Ol7sSFD";
 
@@ -24,6 +24,7 @@ $("body").on("click", ".bandButton", function(evt){
       })
         // After data comes back from the request
         .then(function(response) {
+            console.log(queryURL);
             console.log(response);
 })
 });
