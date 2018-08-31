@@ -1,1 +1,2 @@
 # unit-6-game
+This app dynamically generates a list of buttons. When these buttons are clicke, 10 static gifs appear on the page. The gifs can be played/paused by clicking the image. The user of the page can add their own buttons using the form input. The theme of this project is Emo Music from 2000s. This page was made dynamic with bootstrap. 

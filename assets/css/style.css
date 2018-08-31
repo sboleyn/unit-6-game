@@ -1,7 +1,46 @@
+/* font-family: 'Bad Script', cursive;
+font-family: 'Neucha', cursive; */
+body{
+    font-family: 'Bad Script', cursive;
+    color: white;
+    /* min-height: 200vh;
+    background: url(../images/blackboard.jpg);
+    background-repeat:no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+    background-size:cover;
+    background-position:center; */
+
+    background: url(../images/blackboard.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+}
+
+.mainContainer{
+    background-color: white;
+    border-radius: 5px;
+    min-height: 100vh;
+}
+
+#introTxt{
+    font-family: 'Neucha', cursive;
+}
+
 .jumbotron{
     background: url(../images/blackboard.jpg);
 }
 
 .oneGif{
     display: inline-block;
+}
+
+.btn{
+    background: url(../images/blackboard.jpg);
+    color: white;
 }
