@@ -1,3 +1,7 @@
 .jumbotron{
     background: url(../images/blackboard.jpg);
 }
+
+.oneGifDiv{
+    display: inline-block;
+}
