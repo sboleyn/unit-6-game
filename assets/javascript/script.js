@@ -5,13 +5,30 @@ var buttonArray = ["The Academy Is...", "Cute Is What We Aim For", "Death Cab fo
 // -----------------------------------------------------
 // FUNCTIONS
 // -----------------------------------------------------
+function addButton(){
 buttonArray.forEach(element => {
     var newButton = $("<button value="+element+" class='btn bandButton ml-2 mb-2'>").text(element);
     $("#buttonDiv").append(newButton);
+});
+};
 
+
+$("body").on("click", ".bandButton", function(evt){
+    var band = $(evt).text();
+
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q="+ band +"&api_key=DqteY7DkZT5G9EtFgZoS3gOp5Ol7sSFD";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })
+        // After data comes back from the request
+        .then(function(response) {
+            console.log(response);
+})
 });
 
 // -----------------------------------------------------
 // MAIN 
 // -----------------------------------------------------
-
+addButton();
