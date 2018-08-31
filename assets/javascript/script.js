@@ -51,8 +51,9 @@ $("body").on("click", ".bandButton", function () {
 });
 
 $('#addBandButton').click(function(){
+    if ($("#gifButton").val()){
     var newBandButton = $("#gifButton").val();
     buttonArray.push(newBandButton);
     $("#buttonDiv").empty();
     addButton();
-})
+}});
