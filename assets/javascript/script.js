@@ -36,7 +36,7 @@ $("body").on("click", ".bandButton", function () {
             console.log(response);
             var results = response.data;
             results.forEach(element => {
-                var oneGifDiv = $("<div class='oneGifDiv mb-3 col-6'>");
+                var oneGifDiv = $("<div class='oneGif mb-3 col-6'>");
                 var p = $("<p>").text("Rating: " + element.rating);
                 var bandImage = $("<img class='gif' data-state='still' data-still='"+element.images.fixed_height_still.url+"' data-animate='"+element.images.fixed_height.url+"'>");
                 bandImage.attr("src", element.images.fixed_height_still.url);
@@ -56,7 +56,7 @@ $('#addBandButton').click(function(){
     addButton();
 }});
 
-$(".oneGifDiv").on("click", function() {
+$("body").on("click", ".gif", function() {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
     var state = $(this).attr("data-state");
     // If the clicked image's state is still, update its src attribute to what its data-animate value is.
