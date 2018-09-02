@@ -76,7 +76,7 @@ body{
     display: inline;
 }
 
-.btn:hover{
+.btn:hover, .downloadButton{
     background-color: rgba(158,193,172,0.75);
 }
 
@@ -85,8 +85,9 @@ body{
     border-color: rgba(158,193,172,0.75);
 }
 
-.form-control:hover{
+.form-control:hover, .downloadButton:hover{
     background-color: white;
+    color: #1d1419;
 }
 
 .darkLight{

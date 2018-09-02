@@ -43,10 +43,17 @@ $("body").on("click", ".bandButton", function () {
             var results = response.data;
             results.forEach(element => {
                 var oneGifDiv = $("<div class='oneGif mb-3 col-12 col-md-6 text-center'>");
-                var wellDiv = $("<div class='card card-block bg-faded col-12 col-md-6 mt-2 px-1 py-1 mx-auto'>");
-                var p1 = $("<p class='mt-1 mb-1'>").html("<span class='darkLight'>Rating: " + element.rating+"</span>");
-                var p2 = $("<p class='mb-1'>").html("<span class='darkLight'>Import Date/Time: " + element.import_datetime+"</span>");
-                var p3 = $("<p class='mb-1'>").html("<span class='darkLight'>Trending Date/Time: " + element.trending_datetime+"</span>");
+                var wellDiv = $("<div class='card card-block bg-faded col-12 col-md-6 px-2 py-1 mx-auto'>");
+                var p1 = $("<p class='mt-1 mb-1'>").html("<span class='darkLight'>Rating: " + element.rating + "</span>");
+                var p2 = $("<p class='mb-1'>").html("<span class='darkLight'>Import Date/Time: " + element.import_datetime + "</span>");
+                var p3 = $("<p class='mb-1'>").html("<span class='darkLight'>Trending Date/Time: " + element.trending_datetime + "</span>");
+                var downloadLink = $("<a href='" + element.images.fixed_height.url + "' download target='_blank'>");
+                var dloadButton = $("<button class='btn downloadButton'>").text('Download');
+                console.log(element.images.fixed_height.url);
+                // $('body').on('click', '.downloadButton', function () {
+                //     window.open(element.images.fixed_height.url);
+                // })
+                var dloadUnit = downloadLink.append(dloadButton);
                 var bandImage = $("<img class='gif' data-state='still' data-still='" + element.images.fixed_height_still.url + "' data-animate='" + element.images.fixed_height.url + "'>");
                 bandImage.attr("src", element.images.fixed_height_still.url);
                 oneGifDiv.append(bandImage);
@@ -54,6 +61,7 @@ $("body").on("click", ".bandButton", function () {
                 wellDiv.append(p2);
                 wellDiv.append(p3);
                 oneGifDiv.append(wellDiv);
+                wellDiv.append(dloadUnit);
                 $("#gifDiv").prepend(oneGifDiv);
             })
 
@@ -71,7 +79,7 @@ $('#addBandButton').click(function () {
             $("#gifButtonInput").val("");
             addButton();
         }
-        else{
+        else {
             $("#gifButtonInput").val("");
         }
     }
