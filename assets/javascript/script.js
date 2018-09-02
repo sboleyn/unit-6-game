@@ -63,7 +63,12 @@ $('#addBandButton').click(function () {
             $("#gifButtonInput").val("");
             addButton();
         }
-    }});
+        else{
+            $("#gifButtonInput").val("");
+        }
+    }
+
+});
 
 $("body").on("click", ".gif", function () {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
