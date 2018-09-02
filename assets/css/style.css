@@ -24,6 +24,19 @@ body{
     /* background-color: #b0b0ae; */
     background: url(../images/blackboard2.jpg);
     border-radius: 5px;
+    /* min-height: 100vh; */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
+}
+
+.secondContainer{
+    border-radius: 5px;
+    background: url(../images/blackboard2.jpg);
     min-height: 100vh;
     background-repeat: no-repeat;
     background-position: center center;
@@ -46,6 +59,7 @@ body{
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
+    margin-bottom: 15px;
 }
 
 .oneGif{
@@ -56,6 +70,10 @@ body{
     background-color: #1d1419;
     color: white;
     text-shadow: 1px 1px rgba(158,193,172,0.75);
+}
+
+#addBandButton{
+    display: inline;
 }
 
 .btn:hover{
