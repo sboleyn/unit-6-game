@@ -24,7 +24,7 @@ body{
     /* background-color: #b0b0ae; */
     background: url(../images/blackboard2.jpg);
     border-radius: 5px;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -34,7 +34,7 @@ body{
     -o-background-size:cover;
 }
 
-.secondContainer{
+/* .secondContainer{
     border-radius: 5px;
     background: url(../images/blackboard2.jpg);
     min-height: 100vh;
@@ -45,7 +45,7 @@ body{
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
-}
+} */
 
 #introTxt{
     font-family: 'Amatic SC', cursive;
