@@ -1,18 +1,16 @@
 /* font-family: 'Bad Script', cursive;
-font-family: 'Neucha', cursive; */
+font-family: 'Neucha', cursive; 
+font-family: 'Josefin Slab', serif;
+font-family: 'Amatic SC', cursive;
+#e446b6 is the light pink
+#9a4fdf medium purple
+#8652ea medium slate
+https://media.giphy.com/media/d39JcROfJdsoZD5f37/giphy.gif
+*/
 body{
-    font-family: 'Bad Script', cursive;
+    font-family: 'Josefin Slab', serif;
     color: white;
-    /* min-height: 200vh;
-    background: url(../images/blackboard.jpg);
-    background-repeat:no-repeat;
-    -webkit-background-size:cover;
-    -moz-background-size:cover;
-    -o-background-size:cover;
-    background-size:cover;
-    background-position:center; */
-
-    background: url(../images/blackboard.jpg);
+    background: url(../images/plaid3.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
@@ -23,17 +21,31 @@ body{
 }
 
 .mainContainer{
-    background-color: white;
+    /* background-color: #b0b0ae; */
+    background: url(../images/blackboard2.jpg);
     border-radius: 5px;
     min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    -o-background-size:cover;
 }
 
 #introTxt{
-    font-family: 'Neucha', cursive;
+    font-family: 'Amatic SC', cursive;
+    font-size: 82px;
+    color: #9ec1ac;
 }
 
 .jumbotron{
-    background: url(../images/blackboard.jpg);
+    background: url(../images/plaid2.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 .oneGif{
@@ -41,6 +53,26 @@ body{
 }
 
 .btn{
-    background: url(../images/blackboard.jpg);
+    background-color: #1d1419;
     color: white;
+    text-shadow: 1px 1px rgba(158,193,172,0.75);
+}
+
+.btn:hover{
+    background-color: rgba(158,193,172,0.75);
+}
+
+.form-control{
+    background-color: rgba(158,193,172,0.75);
+    border-color: rgba(158,193,172,0.75);
+}
+
+.form-control:hover{
+    background-color: white;
+}
+
+.darkLight{
+    background-color: rgba(158,193,172,0.75);
+    padding: 5px;
+    border-radius: 5px;
 }

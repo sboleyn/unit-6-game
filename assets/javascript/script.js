@@ -49,10 +49,11 @@ $("body").on("click", ".bandButton", function () {
 });
 
 $('#addBandButton').click(function(){
-    if ($("#gifButton").val()){
-    var newBandButton = $("#gifButton").val();
+    if ($("#gifButtonInput").val()){
+    var newBandButton = $("#gifButtonInput").val();
     topics.push(newBandButton);
     $("#buttonDiv").empty();
+    $("#gifButtonInput").val("");
     addButton();
 }});
 
