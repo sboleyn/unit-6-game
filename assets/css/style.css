@@ -94,3 +94,8 @@ body{
     padding: 5px;
     border-radius: 5px;
 }
+
+.card{
+    background-color: #1d1419;
+    /* background: url(../images/plaid2.jpg); */
+}

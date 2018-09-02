@@ -6,6 +6,8 @@ var topicsLower = $.map(topics, function (n, i) {
     return (n.toLowerCase());
 });
 
+var favorites = [];
+
 // -----------------------------------------------------
 // FUNCTIONS
 // -----------------------------------------------------
@@ -40,12 +42,18 @@ $("body").on("click", ".bandButton", function () {
             console.log(response);
             var results = response.data;
             results.forEach(element => {
-                var oneGifDiv = $("<div class='oneGif mb-3 col-12 col-md-6'>");
-                var p = $("<p>").text("Rating: " + element.rating);
+                var oneGifDiv = $("<div class='oneGif mb-3 col-12 col-md-6 text-center'>");
+                var wellDiv = $("<div class='card card-block bg-faded col-12 col-md-6 mt-2 px-1 py-1 mx-auto'>");
+                var p1 = $("<p class='mt-1 mb-1'>").html("<span class='darkLight'>Rating: " + element.rating+"</span>");
+                var p2 = $("<p class='mb-1'>").html("<span class='darkLight'>Import Date/Time: " + element.import_datetime+"</span>");
+                var p3 = $("<p class='mb-1'>").html("<span class='darkLight'>Trending Date/Time: " + element.trending_datetime+"</span>");
                 var bandImage = $("<img class='gif' data-state='still' data-still='" + element.images.fixed_height_still.url + "' data-animate='" + element.images.fixed_height.url + "'>");
                 bandImage.attr("src", element.images.fixed_height_still.url);
                 oneGifDiv.append(bandImage);
-                oneGifDiv.append(p);
+                wellDiv.append(p1);
+                wellDiv.append(p2);
+                wellDiv.append(p3);
+                oneGifDiv.append(wellDiv);
                 $("#gifDiv").prepend(oneGifDiv);
             })
 
