@@ -2,6 +2,10 @@
 // -----------------------------------------------------
 var topics = ["The Academy Is...", "Cute Is What We Aim For", "Death Cab for Cutie", "Fall Out Boy", "The Fray", "Hawthorne Heights", "Matchbook Romance", "My Chemical Romance", "Panic! at the Disco", "Paramore", "Plain White T's", "The Red Jumpsuit Apparatus", "Saosin", "Say Anything", "Senses Fail", "Something Corporate", "Taking Back Sunday", "Thirty Seconds to Mars", "The Used", "Weezer"];
 
+var topicsLower = $.map(topics, function (n, i) {
+    return (n.toLowerCase());
+});
+
 // -----------------------------------------------------
 // FUNCTIONS
 // -----------------------------------------------------
@@ -38,7 +42,7 @@ $("body").on("click", ".bandButton", function () {
             results.forEach(element => {
                 var oneGifDiv = $("<div class='oneGif mb-3 col-12 col-md-6'>");
                 var p = $("<p>").text("Rating: " + element.rating);
-                var bandImage = $("<img class='gif' data-state='still' data-still='"+element.images.fixed_height_still.url+"' data-animate='"+element.images.fixed_height.url+"'>");
+                var bandImage = $("<img class='gif' data-state='still' data-still='" + element.images.fixed_height_still.url + "' data-animate='" + element.images.fixed_height.url + "'>");
                 bandImage.attr("src", element.images.fixed_height_still.url);
                 oneGifDiv.append(bandImage);
                 oneGifDiv.append(p);
@@ -48,29 +52,33 @@ $("body").on("click", ".bandButton", function () {
         })
 });
 
-$('#addBandButton').click(function(){
-    if ($("#gifButtonInput").val()){
-    var newBandButton = $("#gifButtonInput").val();
-    topics.push(newBandButton);
-    $("#buttonDiv").empty();
-    $("#gifButtonInput").val("");
-    addButton();
-}});
 
-$("body").on("click", ".gif", function() {
+$('#addBandButton').click(function () {
+
+    if ($("#gifButtonInput").val()) {
+        if ($.inArray($("#gifButtonInput").val().toLowerCase(), topicsLower) === -1) {
+            var newBandButton = $("#gifButtonInput").val();
+            topics.push(newBandButton);
+            $("#buttonDiv").empty();
+            $("#gifButtonInput").val("");
+            addButton();
+        }
+    }});
+
+$("body").on("click", ".gif", function () {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
     var state = $(this).attr("data-state");
     // If the clicked image's state is still, update its src attribute to what its data-animate value is.
     // Then, set the image's data-state to animate
     // Else set src to the data-still value
     if (state === "still") {
-      $(this).attr("src", $(this).attr("data-animate"));
-      $(this).attr("data-state", "animate");
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
     } else {
-      $(this).attr("src", $(this).attr("data-still"));
-      $(this).attr("data-state", "still");
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
     }
-  });
+});
 
 /* Ensure your app is fully mobile responsive.
 
