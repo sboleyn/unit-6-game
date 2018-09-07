@@ -18,8 +18,12 @@ body{
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
+    margin-bottom: 5px;
 }
 
+.form-group{
+    border-radius: 5px;
+}
 .mainContainer{
     /* background-color: #b0b0ae; */
     background: url(../images/blackboard2.jpg);
@@ -34,9 +38,10 @@ body{
     -o-background-size:cover;
 }
 
-/* .secondContainer{
+.secondContainer{
     border-radius: 5px;
-    background: url(../images/blackboard2.jpg);
+    /* background: url(../images/blackboard2.jpg); */
+    background-color: rgba(158,193,172,0.75);
     min-height: 100vh;
     background-repeat: no-repeat;
     background-position: center center;
@@ -45,12 +50,19 @@ body{
     -webkit-background-size:cover;
     -moz-background-size:cover;
     -o-background-size:cover;
-} */
+}
 
 #introTxt{
     font-family: 'Amatic SC', cursive;
     font-size: 82px;
     color: #9ec1ac;
+}
+
+.row3{
+    font-family: 'Amatic SC', cursive;
+    font-size: 25px;
+    color: #9ec1ac;
+   
 }
 
 .jumbotron{
@@ -99,4 +111,9 @@ body{
 .card{
     background-color: #1d1419;
     /* background: url(../images/plaid2.jpg); */
+}
+
+#favButtonForm{
+    background-color: #1d1419;
+    border-radius: 5px;
 }
