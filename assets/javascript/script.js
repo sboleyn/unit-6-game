@@ -2,7 +2,14 @@
 // -----------------------------------------------------
 var topics = ["The Academy Is...", "Cute Is What We Aim For", "Death Cab for Cutie", "Fall Out Boy", "The Fray", "Hawthorne Heights", "Matchbook Romance", "My Chemical Romance", "Panic! at the Disco", "Paramore", "Plain White T's", "The Red Jumpsuit Apparatus", "Saosin", "Say Anything", "Senses Fail", "Something Corporate", "Taking Back Sunday", "Thirty Seconds to Mars", "The Used", "Weezer"];
 
-var favTopics = [];
+if (!localStorage.getItem("favButtonStorage") === null) {
+    var favTopics = [localStorage.getItem("favButtonStorage")];
+} 
+else{
+    var favTopics = [];
+};
+
+// var favTopics = [];
 
 var topicsLower = $.map(topics, function (n, i) {
     return (n.toLowerCase());
@@ -134,13 +141,12 @@ $("body").on("click", ".bandButton1", function () {
         })
 });
 
-// favTopics = [localStorage.getItem("favButtonStorage")];
 
 $('#faveButton').click(function (e) {
     e.preventDefault();
 
     // Every time Add Favorite is pressed, favTopics array is populated with items from local storage
-    // favTopics = [localStorage.getItem("favButtonStorage")];
+
 
     if (!favTopics[0] === null && !favTopics[0] === undefined) {
         var favTopicsLower = $.map(favTopics, function (n, i) {
@@ -157,7 +163,7 @@ $('#faveButton').click(function (e) {
             // $("#favButtonDiv").empty();
             $("#addFavoriteInput").val("");
             // var favArray = Array.from(favTopics.values());
-            
+            $("#favButtonDiv").empty();
             addButton(favTopics, $("#favButtonDiv"), "bandButton1");
             localStorage.setItem("favButtonStorage", favTopics);
             // $("#favButtonDiv").text(localStorage.getItem("favButtonStorage"));
@@ -171,6 +177,7 @@ $('#faveButton').click(function (e) {
 });
 
 // $("#favButtonDiv").text(localStorage.getItem("favButtonStorage"));
+addButton(favTopics, $("#favButtonDiv"), "bandButton1");
 
 $("body").on("click", ".gif", function () {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
