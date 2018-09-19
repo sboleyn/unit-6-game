@@ -15,8 +15,6 @@ var topicsLower = $.map(topics, function (n, i) {
     return (n.toLowerCase());
 });
 
-
-
 var favorites = [];
 
 // -----------------------------------------------------
