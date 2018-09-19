@@ -134,34 +134,43 @@ $("body").on("click", ".bandButton1", function () {
         })
 });
 
+// favTopics = [localStorage.getItem("favButtonStorage")];
 
 $('#faveButton').click(function (e) {
     e.preventDefault();
-    favTopics = [localStorage.getItem("favButtonStorage")];
-    var favTopicsLower = $.map(favTopics, function (n, i) {
-        return (n.toLowerCase());
-    });
 
-    
+    // Every time Add Favorite is pressed, favTopics array is populated with items from local storage
+    // favTopics = [localStorage.getItem("favButtonStorage")];
+
+    if (!favTopics[0] === null && !favTopics[0] === undefined) {
+        var favTopicsLower = $.map(favTopics, function (n, i) {
+            favTopics = [localStorage.getItem("favButtonStorage")];
+            return (n.toLowerCase());
+        });
+    }
+
+
     if ($("#addFavoriteInput").val()) {
         if ($.inArray($("#addFavoriteInput").val().toLowerCase(), favTopicsLower) === -1) {
             var newBandButton = $("#addFavoriteInput").val();
             favTopics.push(newBandButton);
             // $("#favButtonDiv").empty();
             $("#addFavoriteInput").val("");
+            // var favArray = Array.from(favTopics.values());
+            
             addButton(favTopics, $("#favButtonDiv"), "bandButton1");
-            localStorage.setItem("favButtonStorage", JSON.stringify(favTopics));
-            $("#favButtonDiv").text(localStorage.getItem("favButtonStorage"));
+            localStorage.setItem("favButtonStorage", favTopics);
+            // $("#favButtonDiv").text(localStorage.getItem("favButtonStorage"));
         }
         else {
             $("#addFavoriteInput").val("");
         }
     }
-    
+
 
 });
 
-$("#favButtonDiv").text(localStorage.getItem("favButtonStorage"));
+// $("#favButtonDiv").text(localStorage.getItem("favButtonStorage"));
 
 $("body").on("click", ".gif", function () {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
