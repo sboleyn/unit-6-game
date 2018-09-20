@@ -54,7 +54,7 @@ $("body").on("click", ".bandButton", function () {
             var results = response.data;
             results.forEach(element => {
                 var oneGifDiv = $("<div class='oneGif mb-3 col-12 col-md-6 text-center'>");
-                var wellDiv = $("<div class='card card-block bg-faded col-12 col-md-6 px-2 py-1 mx-auto'>");
+                var wellDiv = $("<div class='card card-block bg-faded col-9 px-2 py-1 mx-auto'>");
                 var p1 = $("<p class='mt-1 mb-1'>").html("<span class='darkLight'>Rating: " + element.rating + "</span>");
                 var p2 = $("<p class='mb-1'>").html("<span class='darkLight'>Import Date/Time: " + element.import_datetime + "</span>");
                 var p3 = $("<p class='mb-1'>").html("<span class='darkLight'>Trending Date/Time: " + element.trending_datetime + "</span>");
@@ -115,7 +115,7 @@ $("body").on("click", ".bandButton1", function () {
             var results = response.data;
             results.forEach(element => {
                 var oneGifDiv = $("<div class='oneGif mb-3 col-12 col-md-6 text-center'>");
-                var wellDiv = $("<div class='card card-block bg-faded col-12 col-md-6 px-2 py-1 mx-auto'>");
+                var wellDiv = $("<div class='card card-block bg-faded col-9 px-2 py-1 mx-auto'>");
                 var p1 = $("<p class='mt-1 mb-1'>").html("<span class='darkLight'>Rating: " + element.rating + "</span>");
                 var p2 = $("<p class='mb-1'>").html("<span class='darkLight'>Import Date/Time: " + element.import_datetime + "</span>");
                 var p3 = $("<p class='mb-1'>").html("<span class='darkLight'>Trending Date/Time: " + element.trending_datetime + "</span>");
@@ -165,7 +165,7 @@ $('#faveButton').click(function (e) {
             $("#favButtonDiv").empty();
             addButton(favTopics[0], $("#favButtonDiv"), "bandButton1");
             localStorage.setItem("favButtonStorage", favTopics);
-            // $("#favButtonDiv").text(localStorage.getItem("favButtonStorage"));
+            // $(".secondContainer").append("<div class='btn'>View More</div>");
         }
         else {
             $("#addFavoriteInput").val("");
