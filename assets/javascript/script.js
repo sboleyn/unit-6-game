@@ -2,11 +2,11 @@
 // -----------------------------------------------------
 var topics = ["The Academy Is...", "Cute Is What We Aim For", "Death Cab for Cutie", "Fall Out Boy", "The Fray", "Hawthorne Heights", "Matchbook Romance", "My Chemical Romance", "Panic! at the Disco", "Paramore", "Plain White T's", "The Red Jumpsuit Apparatus", "Saosin", "Say Anything", "Senses Fail", "Something Corporate", "Taking Back Sunday", "Thirty Seconds to Mars", "The Used", "Weezer"];
 
-if (!localStorage.getItem("favButtonStorage") === null) {
-    var favTopics = [localStorage.getItem("favButtonStorage")];
+if (!(localStorage.getItem("favButtonStorage") === null)) {
+    var favTopics = [localStorage.getItem("favButtonStorage").split(",")];
 } 
-else{
-    var favTopics = [];
+else {
+    var favTopics = [[]];
 };
 
 // var favTopics = [];
@@ -21,6 +21,7 @@ var favorites = [];
 // FUNCTIONS
 // -----------------------------------------------------
 function addButton(arr, div, classStr) {
+    div.empty();
     arr.forEach(element => {
         var newButton = $("<button value=" + element + " class='btn ml-2 mb-2'>")
         newButton.addClass(classStr).text(element);
@@ -146,9 +147,9 @@ $('#faveButton').click(function (e) {
     // Every time Add Favorite is pressed, favTopics array is populated with items from local storage
 
 
-    if (!favTopics[0] === null && !favTopics[0] === undefined) {
-        var favTopicsLower = $.map(favTopics, function (n, i) {
-            favTopics = [localStorage.getItem("favButtonStorage")];
+    if (!(favTopics[0] === null) && !(favTopics[0] === undefined)) {
+        var favTopicsLower = $.map(favTopics[0], function (n, i) {
+            // favTopics = [localStorage.getItem("favButtonStorage")];
             return (n.toLowerCase());
         });
     }
@@ -157,12 +158,12 @@ $('#faveButton').click(function (e) {
     if ($("#addFavoriteInput").val()) {
         if ($.inArray($("#addFavoriteInput").val().toLowerCase(), favTopicsLower) === -1) {
             var newBandButton = $("#addFavoriteInput").val();
-            favTopics.push(newBandButton);
+            favTopics[0].push(newBandButton);
             // $("#favButtonDiv").empty();
             $("#addFavoriteInput").val("");
             // var favArray = Array.from(favTopics.values());
             $("#favButtonDiv").empty();
-            addButton(favTopics, $("#favButtonDiv"), "bandButton1");
+            addButton(favTopics[0], $("#favButtonDiv"), "bandButton1");
             localStorage.setItem("favButtonStorage", favTopics);
             // $("#favButtonDiv").text(localStorage.getItem("favButtonStorage"));
         }
@@ -175,7 +176,7 @@ $('#faveButton').click(function (e) {
 });
 
 // $("#favButtonDiv").text(localStorage.getItem("favButtonStorage"));
-addButton(favTopics, $("#favButtonDiv"), "bandButton1");
+addButton(favTopics[0], $("#favButtonDiv"), "bandButton1");
 
 $("body").on("click", ".gif", function () {
     // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
